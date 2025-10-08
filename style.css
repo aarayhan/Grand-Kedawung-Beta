@@ -1,0 +1,783 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  background: rgb(255, 255, 255) !important;
+  padding: 0.8rem 1rem;
+}
+
+.navbar a {
+  color: #232323 !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffe082 !important;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.section-bg-light {
+  height: 100vh;
+  background: #f8f9fa;
+}
+
+.section-bg-grey {
+  height: 100vh;
+  background: #e9ecef;
+}
+
+.section-bg-dark {
+  background: #dee2e6;
+  min-height: auto;
+}
+
+.nav-links {
+  display: flex !important;
+}
+
+/* Responsive NavBar */
+
+.hamburger {
+  /* ini css vanilla */
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 10px;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none !important;
+    flex-direction: column;
+    background: black !important;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  #menu-toggle:checked+.hamburger+.nav-links {
+    display: flex !important;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  nav>.container>ul>li:hover {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+
+  }
+}
+
+/* Hero Section */
+
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 60px 0;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.hero img {
+  border-radius: 20px;
+  box-shadow: #ff9f0e 0px 10px 30px !important;
+  border-radius: 20px !important;
+
+}
+
+.hero .btn {
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+  background: #ff9f0e;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 18px #ff9f0e;
+  color: rgb(255, 255, 255) !important;
+}
+
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .hero {
+    text-align: center;
+  }
+
+  .hero .hero-img {
+    margin-top: 30px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* about us section */
+.about {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.about h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.about .row {
+  padding: 30px !important;
+}
+
+.about .btn {
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.about .btn:hover {
+  background: #ff9f0e;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 18px #ff9f0e;
+  color: rgb(255, 255, 255) !important;
+}
+
+.about .carousel-inner {
+  box-shadow: #ff9f0e 0px 10px 20px !important;
+  border-radius: 20px !important;
+}
+
+.about .carousel :hover {
+  border-radius: 5px;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  box-shadow: #ff9f0e 0px 10px 30px !important;
+
+}
+
+/* room see more */
+
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* See More button */
+.see-more-btn {
+  border-radius: 50px;
+  padding: 12px 30px;
+  transition: all 0.3s ease;
+  font-weight: 500 !important;
+}
+
+.see-more-btn:hover {
+  background: #ff9f0e;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 18px #ff9f0e;
+  color: rgb(255, 255, 255) !important;
+  font-weight: 500 !important;
+}
+
+/* Overlay (dark background) */
+.overlay {
+  display: none;
+  /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup card */
+.popup-card {
+  background: white;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 800px;
+  padding: 20px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close button (X) */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+/* Popup content layout */
+.popup-content {
+  display: flex;
+  gap: 20px;
+}
+
+.popup-content .image-col img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.popup-content .detail-col {
+  flex: 1;
+}
+
+/* Responsive (stack columns on small screens) */
+@media (max-width: 768px) {
+  .popup-content {
+    flex-direction: column;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* Service */
+
+.service .card {
+  box-shadow: #ffe082 0px 10px 20px !important;
+  border-radius: 20px !important;
+}
+
+.service .img {
+  border-radius: 20px !important;
+  height: 350px !important;
+  width: 450px !important;
+}
+
+.service .detail-btn {
+  border-radius: 50px !important;
+  padding: 12px 30px !important;
+  transition: all 0.3s ease;
+  font-weight: 500 !important;
+}
+
+.service .detail-btn:hover {
+  background: #ff9f0e;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 18px #ff9f0e;
+  color: rgb(255, 255, 255) !important;
+  font-weight: 500 !important;
+
+}
+
+/* Contact */
+
+.contact .card {
+  box-shadow: #ffe082 0px 10px 20px !important;
+  border-radius: 20px !important;
+}
+
+.contact .btn {
+  border-radius: 50px !important;
+  padding: 12px 30px !important;
+  transition: all 0.3s ease;
+  font-weight: 500 !important;
+}
+
+.contact .btn:hover {
+  background: #ff9f0e;
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 18px #ff9f0e;
+  color: rgb(255, 255, 255) !important;
+  font-weight: 500 !important;
+
+}
+
+/* =
+==== RESPONSIVE MEDIA QUERIES ===== */
+
+/* Extra Small devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+
+  /* Hero Section */
+  .hero {
+    padding: 40px 0;
+    min-height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem !important;
+    margin-bottom: 15px;
+  }
+
+  .hero h4 {
+    font-size: 1rem !important;
+  }
+
+  .hero p {
+    font-size: 0.9rem !important;
+    margin-bottom: 20px;
+  }
+
+  .hero img {
+    width: 100% !important;
+    max-width: 300px;
+  }
+
+  /* About Section */
+  .about .row {
+    margin: 20px !important;
+    padding: 15px !important;
+  }
+
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+
+  .about h3 {
+    font-size: 1.4rem !important;
+  }
+
+  /* Service Cards */
+  .service .card {
+    margin-bottom: 20px;
+  }
+
+  .service .card-body {
+    padding: 20px 15px;
+  }
+
+  .service .card-title {
+    font-size: 1.1rem;
+  }
+
+  /* Contact Section - Fix overlap issue */
+  #contact {
+    padding-bottom: 40px !important;
+  }
+
+  .contact .card {
+    margin-bottom: 15px;
+  }
+
+  .contact .card-body {
+    padding: 20px 15px;
+  }
+
+  /* Contact form card spacing */
+  .contact .row.mt-3 {
+    margin-top: 20px !important;
+    margin-bottom: 30px !important;
+  }
+
+  /* Footer - Add top margin to prevent overlap */
+  footer {
+    margin-top: 40px !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer .container {
+    padding: 0 15px;
+  }
+
+  footer .col-lg-4,
+  footer .col-lg-2,
+  footer .col-lg-3 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  footer .d-flex.gap-3 {
+    justify-content: center;
+  }
+
+  /* Popup responsiveness */
+  .popup-card {
+    width: 95% !important;
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .popup-content {
+    flex-direction: column !important;
+  }
+
+  /* Buttons */
+  .btn-lg {
+    padding: 10px 20px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h4 {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about h3 {
+    font-size: 1.5rem;
+  }
+
+  .popup-card {
+    width: 90%;
+  }
+
+  /* Contact section spacing */
+  #contact {
+    padding-bottom: 30px !important;
+  }
+
+  .contact .row.mt-3 {
+    margin-bottom: 25px !important;
+  }
+
+  /* Footer spacing */
+  footer {
+    margin-top: 30px !important;
+  }
+
+  footer .col-lg-4,
+  footer .col-lg-2,
+  footer .col-lg-3 {
+    margin-bottom: 25px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero {
+    padding: 50px 0;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .about .row {
+    margin: 30px !important;
+  }
+
+  /* Service cards in 2 columns on tablets */
+  .service .col-md-4:nth-child(3) {
+    margin-top: 20px;
+  }
+
+  .popup-card {
+    width: 85%;
+  }
+
+  footer .col-lg-2 {
+    margin-bottom: 20px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2.3rem;
+  }
+
+  .popup-card {
+    width: 80%;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .popup-card {
+    width: 70%;
+  }
+}
+
+/* Landscape orientation fixes */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .hero .btn {
+    padding: 8px 20px !important;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+  .hero img,
+  .about .carousel-inner img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print styles */
+@media print {
+
+  .navbar,
+  #scrollTopBtn,
+  .overlay {
+    display: none !important;
+  }
+
+  .hero,
+  .about,
+  .service,
+  .contact {
+    page-break-inside: avoid;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .popup-card {
+    background: #2d3748;
+    color: white;
+  }
+
+  .close-btn {
+    color: white;
+  }
+
+  .close-btn:hover {
+    color: #ff6b6b;
+  }
+}
+
+/* Container max-width adjustments */
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
+/* Fix 
+for contact form and footer overlap on mobile */
+@media (max-width: 767.98px) {
+
+  /* Ensure contact section has proper spacing */
+  #contact {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Add clear separation between contact form and footer */
+  #contact .container {
+    padding-bottom: 50px !important;
+  }
+
+  /* Footer positioning fix */
+  footer {
+    position: relative;
+    z-index: 1;
+    clear: both;
+    margin-top: 50px !important;
+  }
+
+  /* Ensure no floating elements interfere */
+  #contact::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Contact form card bottom margin */
+  .contact .row:last-child {
+    margin-bottom: 40px !important;
+  }
+
+  /* Additional spacing for contact form */
+  .contact .card:last-child {
+    margin-bottom: 30px !important;
+  }
+}
+
+/* Extra safety for very small screens */
+@media (max-width: 480px) {
+  #contact .container {
+    padding-bottom: 60px !important;
+  }
+
+  .contact .row:last-child {
+    margin-bottom: 50px !important;
+  }
+}
+
+/* Contact 
+section height fix */
+#contact.section-bg-dark {
+  height: auto !important;
+  min-height: auto !important;
+  padding: 60px 0 !important;
+}
+
+/* Mobile specific contact section fixes */
+@media (max-width: 767.98px) {
+  #contact.section-bg-dark {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 40px 0 60px 0 !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #contact.section-bg-dark {
+    padding: 30px 0 80px 0 !important;
+  }
+}
+
+/* URGENT
+ FIX: Contact section and footer overlap */
+@media (max-width: 768px) {
+
+  /* Force contact section to not use fixed height */
+  #contact.section-bg-dark {
+    height: auto !important;
+    min-height: auto !important;
+    padding-bottom: 100px !important;
+  }
+
+  /* Ensure footer is visible */
+  footer {
+    position: relative !important;
+    z-index: 10 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Add space after contact form */
+  #contact .row:last-child {
+    margin-bottom: 80px !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  #contact.section-bg-dark {
+    padding-bottom: 120px !important;
+  }
+
+  #contact .row:last-child {
+    margin-bottom: 100px !important;
+  }
+}

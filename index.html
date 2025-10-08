@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image" href="img/logo.jpg" class="rounded">
+    <title>Grand Kedawung - </title>
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar sticky-top shadow">
+        <div class="container d-flex justify-content-between align-item-center container-fluid">
+
+            <a href="#" class="navbar-brand"><img src="img/logo.png" alt="" width="30" height="22"
+                    class="d-inline-block align-text-top"> <b>Grand Kedawung</b></a>
+
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger text-white">&#9776</label>
+            <!--"class="hamburger" itu bukan komponen BS -->
+
+            <ul class="nav-links list-unstyled mb-0">
+                <li class="mx-2">
+                    <a href="#hero" class="nav-link">Home</a>
+                </li>
+                <li class="mx-2">
+                    <a href="#about" class="nav-link"> About Us</a>
+                </li>
+                <li class="mx-2">
+                    <a href="#service" class="nav-link">Service</a>
+                </li>
+                <li class="mx-2">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section id="hero" class="hero d-flex align-items-center ">
+        <div class="container pt-2 ">
+            <div class="row">
+                <!-- bagian text -->
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 class="mb-0 fw-bold">Grand Kedawung</h1>
+                    <h4 class="mb-4 fw-light fs">-Syariah Executive Kost-</h4>
+                    <p class="mb-4 text-secondary">Adalah Kost yang menerapkan konsep sesuai dengan syariah Islam untuk
+                        keberkahan dan keselamatan dunia akhirat bagi semua pihak (penyewa, sesama penghuni, pengelola
+                        dan pemilik)</p>
+                    <a href="#about" class="btn btn-warning btn-lg rounded-pill text-black">Pelajari Lebih Lanjut</a>
+
+                </div>
+
+                <!-- bagian gambar -->
+                <div class="col-lg-6 hero-img d-flex justify-content-center align-items-center">
+                    <img src="img/building1.png" alt="Hero Image" class="img-fluid shadow " width="500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+
+    <section id="about" class="about py-4">
+        <div class="container ">
+            <!-- judul seection -->
+            <h2 class="section-title text-center mb-2">About Us</h2>
+        </div>
+
+        <div class="row align-items-center m-5 ">
+            <!-- column gambar -->
+            <div id="carousel" class="carousel slide col-lg-6 text-center mb-4 mb-md-0" data-bs-ride="carousel"
+                data-bs-interval="3000" data-bs-pause="hover"> <!-- 2500 = 2.5 s -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/view3.jpg" class="d-flex img-fluid rounded shadow">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/view1.jpg" class="d-flex img-fluid rounded shadow">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/hall1.jpg" class="d-flex img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+
+            <!-- column text -->
+
+            <div class="col-lg-6">
+                <h3 class="mb-3">What is Grand Kedawung?</h3>
+                <p class="mb-3">
+                    <b>Grand Kedawung Syariah Executive Kost </b>
+                    merupakan hunian eksklusif yang dirancang khusus untuk laki-laki dengan mengusung konsep syariah
+                    Islam sebagai landasan utama.
+                    Terletak di lokasi yang sangat strategis, kost ini berada dekat dengan berbagai fasilitas penting
+                    seperti perkantoran, bank, hotel, minimarket, serta hanya selangkah dari poros utama Jalan Malang –
+                    Surabaya.
+                    Hal ini menjadikannya pilihan ideal bagi para profesional maupun mahasiswa yang mengutamakan
+                    kenyamanan dan kemudahan akses.
+                </p>
+                <p class="mb-3">
+                    Dengan fasilitas lengkap dan pelayanan yang ramah, Grand Kedawung Syariah Executive Kost berkomitmen
+                    untuk memberikan pengalaman hunian yang aman, nyaman, dan sesuai dengan prinsip-prinsip syariah
+                    Islam.
+                </p>
+                <a href="#service" class="btn btn-warning btn-lg rounded-pill text-black">Pelajari Layanan Kami</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--Service Section  -->
+
+    <section id="service" class="service py-5 bg-light">
+        <div class="container">
+            <!-- section title -->
+            <h2 class="section-title text-center mb-4">Our Service</h2>
+            <div class="row g-4">
+
+                <!-- card 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 text-center shadow-lg border-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-broom fs-1 mb-3 text-warning"></i>
+                            <h5 class="card-title">Cleaning Service</h5>
+                            <ul class="card-text">
+                                <li>Room cleaning one time per week</li>
+                                <li>Cleaning Hall, Garage, and Kitchen everyday</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 2 -->
+                <div class="col-md-4">
+                    <div class="card h-auto text-center shadow-lg border-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-mug-saucer fs-1 text-warning mb-3"></i>
+                            <h5 class="card-title">Refill Drinks</h5>
+                            <p class="card-text">Coffee, Tea, Sugar, and Cooking Oil will get refill every 1 month </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class="col-md-4">
+                    <div class="card h- text-center shadow-lg border-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-clock fs-1 text-warning mb-3"></i>
+                            <h5 class="card-title">Adzan Reminders</h5>
+                            <p class="card-text">Every 5 time prayers there will be a adzan reminder in each floor</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 4 -->
+                <div class="col-md-6">
+                    <div class="card h-100 text-center shadow-lg border-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-bowl-food fs-1 text-warning mb-3"></i>
+                            <h5 class="card-title">Blessed Friday <i class="text-secondary">(on progress)</i></h5>
+                            <p class="card-text">In every Friday morning there will be a free breakfast</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 5 -->
+                <div class="col-md-6">
+                    <div class="card h-100 text-center shadow-lg border-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-camera fs-1 text-warning mb-3"></i>
+                            <h5 class="card-title">Security</h5>
+                            <p class="card-text">In each floor there are several CCTVs running for 24 hours to be safe
+                                from theft and other things</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!-- card 6 Room -->
+
+        <div class="d-flex justify-content-center mt-5 w-full">
+            <div class="card h-100 text-center shadow-lg border-0">
+                <div class="card-body">
+
+                    <h5 class="card-title">Room details</h5>
+                    <p class="card-text">Di setiap kamar sudah tersedia fasilitas....</p>
+
+
+                    <div class="container">
+                        <button id="seeMoreBtn" class="see-more-btn btn btn-warning btn-lg rounded-pill ">See
+                            More</button>
+                    </div>
+
+                    <!-- Overlay -->
+                    <div id="overlay" class="overlay">
+                        <!-- Popup Card -->
+                        <div class="popup-card">
+                            <span id="closeBtn" class="close-btn">&times;</span>
+                            <div class="popup-content">
+                                <div class="row">
+                                    <div class="col image-col">
+                                        <img src="img/room1.jpg" alt="Room Image">
+                                    </div>
+                                    <div class="col detail-col text-start">
+                                        <h2>Details</h2>
+                                        <p>
+                                            Di setiap kamar sudah tersedia fasilitas sebagai berikut:
+                                        <ul>
+                                            <li>AC</li>
+                                            <li>Lemari</li>
+                                            <li>Kamar Mandi
+                                                <ul>
+                                                    <li>Shower</li>
+                                                    <li>Wastafel</li>
+                                                    <li>Closet Duduk</li>
+                                                    <li>Sabun & Shampo</li>
+                                                </ul>
+                                            </li>
+                                            <li>Meja & Kursi</li>
+                                            <li>Internet Super Cepat 200 - 400 Mbps utk 26 kamar.</li>
+                                        </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center mt-5 ">
+            <a href="https://forms.gle/UHqE91cnF26jGbUX6 " target="_blank" id="detail-btn"
+                class="detail-btn btn btn-warning btn-lg rounded-pill ">Terms & Registration</a>
+        </div>
+
+
+    </section>
+
+    <!-- Contact Us -->
+
+    <section id="contact" class=" contact py-5 section-bg-dark">
+        <div class="container">
+            <h2 class="section-title text-center mb-4 pt-2">Contact Us</h2>
+            <p class="text-center mb-5">Jika ada pertanyaan atau ingin menghubungi kami, silakan hubungi kami melalui
+                kontak di bawah ini.</p>
+
+            <div class="row g-4">
+                <!-- Contact Info Cards -->
+                <div class="col-lg-4">
+                    <div class="card h-100 text-center shadow-lg border-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-location-dot fs-1 text-warning mb-3"></i>
+                            <h5 class="card-title">Address</h5>
+                            <p class="card-text">Jalan Malang-Surabaya</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card h-100 text-center shadow-lg border-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-phone fs-1 text-warning mb-3"></i>
+                            <h5 class="card-title">Phone</h5>
+                            <p class="card-text">0851-1742-6680</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card h-100 text-center shadow-lg border-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-envelope fs-1 text-warning mb-3"></i>
+                            <h5 class="card-title">Email</h5>
+                            <p class="card-text">XXXXXXXXXXXXXXXXXXXXXXX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form Card -->
+            <div class="row mt-3 mb-5">
+                <div class="col-12">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body">
+                            <h4 class="card-title text-center mb-4">Send us a Message</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="Enter your email">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="5"
+                                        placeholder="Enter your message"></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" id="btn-send" class="btn btn-warning btn-lg rounded-pill">Send
+                                        Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="img/logo.png" alt="Logo" width="40" height="32" class="me-2">
+                        <h5 class="mb-0 text-warning">Grand Kedawung</h5>
+                    </div>
+                    <p class="text-light">Syariah Executive Kost yang menerapkan konsep sesuai dengan syariah Islam
+                        untuk keberkahan dan keselamatan dunia akhirat bagi semua pihak.</p>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.instagram.com/grandkedawung/" target="_blank" class="text-warning fs-4"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/6285117426680" target="_blank" class="text-warning fs-4"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" class="text-warning fs-4"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@grand.kedawung?is_from_webapp=1&sender_device=pc"
+                            target="_blank" class="text-warning fs-4"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-warning mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#hero" class="text-light text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-light text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#service" class="text-light text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-warning mb-3">Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Cleaning Service</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Refill Drinks</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Adzan Reminders</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Security 24/7</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Blessed Friday</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>. More</li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-warning mb-3">Contact Info</h5>
+                    <div class="d-flex align-items-start mb-2">
+                        <i class="fa-solid fa-location-dot text-warning me-2 mt-1"></i>
+                        <span class="text-light">Jalan Malang-Surabaya</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fa-solid fa-phone text-warning me-2"></i>
+                        <span class="text-light">0851-1742-6680</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fa-solid fa-envelope text-warning me-2"></i>
+                        <span class="text-light">info@grandkedawung.com</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fa-solid fa-clock text-warning me-2"></i>
+                        <span class="text-light">24/7 Available</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <hr class="my-4 border-secondary">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-light">&copy; 2025 Grand Kedawung. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" target="_blank" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" target="_blank" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="btn btn-warning rounded-circle shadow"
+        style="position: fixed; bottom: 20px; right: 20px; display: none;">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
