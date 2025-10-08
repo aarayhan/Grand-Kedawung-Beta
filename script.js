@@ -50,12 +50,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Basic validation
       if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-        alert('Please fill in all fields!');
+        alert(`Sorry, for this feature is still under development, so you can't send anything`);
         return;
       }
 
       // Show success message
-      alert('Message sent!');
+      alert(`Sorry, for this feature is still under development, so you can't send anything`);
 
       // Optional: Clear the form
       contactForm.reset();
