@@ -2,7 +2,7 @@
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
 window.onscroll = function () {
-  if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+  if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000) {
     scrollTopBtn.style.display = "block";
   } else {
     scrollTopBtn.style.display = "none";
@@ -21,17 +21,31 @@ const closeBtn = document.getElementById("closeBtn");
 // Open popup
 seeMoreBtn.addEventListener("click", () => {
   overlay.style.display = "flex";
+  overlay.classList.add("active");
+  document.body.classList.add("overlay-active");
 });
 
-// Close popup
-closeBtn.addEventListener("click", () => {
+// Close popup function
+function closePopup() {
   overlay.style.display = "none";
-});
+  overlay.classList.remove("active");
+  document.body.classList.remove("overlay-active");
+}
+
+// Close popup
+closeBtn.addEventListener("click", closePopup);
 
 // Also close when clicking outside the card
 overlay.addEventListener("click", (e) => {
   if (e.target === overlay) {
-    overlay.style.display = "none";
+    closePopup();
+  }
+});
+
+// Close popup with Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && overlay.style.display === "flex") {
+    closePopup();
   }
 });
 
