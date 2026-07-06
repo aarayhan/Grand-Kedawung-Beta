@@ -1,366 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image" href="img/logo.jpg" class="rounded">
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
     <title>Grand Kedawung - Syariah Executive Kost</title>
 
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta name="description"
+        content="Grand Kedawung Syariah Executive Kost — hunian eksklusif berkonsep syariah di lokasi strategis Kota Malang.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
-
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
 </head>
 
 <body>
-    <nav class="navbar sticky-top shadow">
-        <div class="container d-flex justify-content-between align-item-center container-fluid">
 
-            <a href="#" class="navbar-brand"><img src="img/logo.png" alt="" width="30" height="22"
-                    class="d-inline-block align-text-top"> <b>Grand Kedawung</b></a>
+    <!-- ===== Navbar ===== -->
+    <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a href="#hero" class="navbar-brand d-flex align-items-center gap-2">
+                <img src="img/logo.png" alt="Logo Grand Kedawung" width="38" height="30">
+                <span>Grand <em>Kedawung</em></span>
+            </a>
 
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="hamburger text-white">&#9776</label>
-            <!--"class="hamburger" itu bukan komponen BS -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-            <ul class="nav-links list-unstyled mb-0">
-                <li class="mx-2">
-                    <a href="#hero" class="nav-link">Home</a>
-                </li>
-                <li class="mx-2">
-                    <a href="#about" class="nav-link"> About Us</a>
-                </li>
-                <li class="mx-2">
-                    <a href="#service" class="nav-link">Service</a>
-                </li>
-                <li class="mx-2">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#service" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#rooms" class="nav-link">Rooms</a></li>
+                    <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="https://forms.gle/UHqE91cnF26jGbUX6" target="_blank"
+                            class="btn btn-gold btn-sm px-4">Daftar Sekarang</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-
-    <section id="hero" class="hero d-flex align-items-center ">
-        <div class="container pt-2 ">
-            <div class="row">
-                <!-- bagian text -->
-                <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <h1 class="mb-0 fw-bold">Grand Kedawung</h1>
-                    <h4 class="mb-4 fw-light fs">-Syariah Executive Kost-</h4>
-                    <p class="mb-4 text-secondary">Adalah Kost yang menerapkan konsep sesuai dengan syariah Islam untuk
-                        keberkahan dan keselamatan dunia akhirat bagi semua pihak (penyewa, sesama penghuni, pengelola
-                        dan pemilik)</p>
-                    <a href="#about" class="btn btn-warning btn-lg rounded-pill text-black">Pelajari Lebih Lanjut</a>
-
-                </div>
-
-                <!-- bagian gambar -->
-                <div class="col-lg-6 hero-img d-flex justify-content-center align-items-center">
-                    <img src="img/building1.png" alt="Hero Image" class="img-fluid shadow " width="500">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us -->
-
-    <section id="about" class="about py-4">
-        <div class="container ">
-            <!-- judul seection -->
-            <h2 class="section-title text-center mb-2">About Us</h2>
-        </div>
-
-        <div class="row align-items-center m-5 ">
-            <!-- column gambar -->
-            <div id="carousel" class="carousel slide col-lg-6 text-center mb-4 mb-md-0" data-bs-ride="carousel"
-                data-bs-interval="3000" data-bs-pause="hover"> <!-- 2500 = 2.5 s -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="img/view3.jpg" class="d-flex img-fluid rounded shadow">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/view1.jpg" class="d-flex img-fluid rounded shadow">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/hall1.jpg" class="d-flex img-fluid rounded shadow">
-                    </div>
-                </div>
-            </div>
-
-            <!-- column text -->
-
-            <div class="col-lg-6">
-                <h3 class="mb-3">What is Grand Kedawung?</h3>
-                <p class="mb-3">
-                    <b>Grand Kedawung Syariah Executive Kost </b>
-                    merupakan hunian eksklusif yang dirancang khusus untuk laki-laki dengan mengusung konsep syariah
-                    Islam sebagai landasan utama.
-                    Terletak di lokasi yang sangat strategis, kost ini berada dekat dengan berbagai fasilitas penting
-                    seperti perkantoran, bank, hotel, minimarket, serta hanya selangkah dari poros utama Jalan Malang –
-                    Surabaya.
-                    Hal ini menjadikannya pilihan ideal bagi para profesional maupun mahasiswa yang mengutamakan
-                    kenyamanan dan kemudahan akses.
-                </p>
-                <p class="mb-3">
-                    Dengan fasilitas lengkap dan pelayanan yang ramah, Grand Kedawung Syariah Executive Kost berkomitmen
-                    untuk memberikan pengalaman hunian yang aman, nyaman, dan sesuai dengan prinsip-prinsip syariah
-                    Islam.
-                </p>
-                <a href="#service" class="btn btn-warning btn-lg rounded-pill text-black">Pelajari Layanan Kami</a>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!--Service Section  -->
-
-    <section id="service" class="service py-5 bg-light">
+    <!-- ===== Hero ===== -->
+    <section id="hero" class="hero d-flex align-items-center">
         <div class="container">
-            <!-- section title -->
-            <h2 class="section-title text-center mb-4">Our Service</h2>
-            <div class="row g-4 align-items-center">
-
-                <!-- card 1 -->
-                <div class="col-md-4 col-6 col-md-4 col-lg-3">
-                    <div class="card h-100 text-center shadow-lg border-0">
-                        <div class="card-body">
-                            <i class="fa-solid fa-broom fs-1 mb-3 text-warning"></i>
-                            <h5 class="card-title">Cleaning Service</h5>
-                            <ul class="card-text text-start">
-                                <li>Room cleaning one time per week</li>
-                                <li>Cleaning Hall, Garage, and Kitchen everyday</li>
-                            </ul>
-
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6">
+                    <span class="badge-pill"><i class="fa-solid fa-star-and-crescent me-2"></i>Syariah Executive
+                        Kost &bull; Kota Malang</span>
+                    <h1 class="hero-title">Hunian Nyaman,<br>Berkah &amp; <span class="text-gradient">Eksklusif</span>
+                    </h1>
+                    <p class="hero-lead">
+                        Kost khusus laki-laki yang menerapkan konsep sesuai syariah Islam untuk keberkahan dan
+                        keselamatan dunia akhirat — di lokasi strategis, selangkah dari poros utama Jalan
+                        Malang&nbsp;&ndash;&nbsp;Surabaya.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mb-5">
+                        <a href="#about" class="btn btn-gold btn-lg">Pelajari Lebih Lanjut</a>
+                        <a href="https://wa.me/6285117426680" target="_blank" class="btn btn-outline-dark-soft btn-lg">
+                            <i class="fa-brands fa-whatsapp me-2"></i>Hubungi Kami
+                        </a>
+                    </div>
+                    <div class="hero-stats d-flex flex-wrap">
+                        <div class="stat">
+                            <span class="stat-value">24/7</span>
+                            <span class="stat-label">CCTV Security</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">400<small> Mbps</small></span>
+                            <span class="stat-label">WiFi Cepat</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">RFID</span>
+                            <span class="stat-label">Smart Key</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- card 2 -->
-                <div class="col-md-4 col-6 col-md-4 col-lg-3">
-                    <div class="card h-auto text-center shadow-lg border-0">
-                        <div class="card-body">
-                            <i class="fa-solid fa-mug-saucer fs-1 text-warning mb-3"></i>
-                            <h5 class="card-title">Refill Drinks</h5>
-                            <p class="card-text">Coffee, Tea, Sugar, and Cooking Oil will get refill every 1 month </p>
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <img src="img/building1.png" alt="Gedung Grand Kedawung" class="img-fluid">
+                        <div class="hero-card shadow">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <strong>Lokasi Strategis</strong>
+                                <span>Blimbing, Kota Malang</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- ===== About ===== -->
+    <section id="about" class="about section-pad">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-eyebrow">About Us</span>
+                <h2 class="section-title">What is <span class="text-gradient">Grand Kedawung</span>?</h2>
+            </div>
+
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6">
+                    <div id="carousel" class="carousel slide about-carousel" data-bs-ride="carousel"
+                        data-bs-interval="3500" data-bs-pause="hover">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"
+                                aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/view3.jpg" class="d-block w-100" alt="Tampak Grand Kedawung">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/view1.jpg" class="d-block w-100" alt="Tampak Grand Kedawung">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/hall1.jpg" class="d-block w-100" alt="Hall Grand Kedawung">
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- card 3 -->
-                <div class="col-md-4 col-6 col-md-4 col-lg-3">
-                    <div class="card h- text-center shadow-lg border-0">
-                        <div class="card-body">
-                            <i class="fa-solid fa-clock fs-1 text-warning mb-3"></i>
-                            <h5 class="card-title">Adzan Reminders</h5>
-                            <p class="card-text">Every 5 time prayers there will be a adzan reminder in each floor</p>
+                <div class="col-lg-6">
+                    <p class="mb-3">
+                        <b>Grand Kedawung Syariah Executive Kost</b> merupakan hunian eksklusif yang dirancang khusus
+                        untuk laki-laki dengan mengusung konsep syariah Islam sebagai landasan utama — pilihan ideal
+                        bagi para profesional maupun mahasiswa yang mengutamakan kenyamanan dan kemudahan akses.
+                    </p>
+                    <ul class="check-list list-unstyled mb-4">
+                        <li><i class="fa-solid fa-circle-check"></i>Dekat perkantoran, bank, hotel, dan minimarket</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Selangkah dari poros utama Jalan Malang &ndash;
+                            Surabaya</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Lingkungan aman, nyaman, dan islami</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Fasilitas lengkap dengan pelayanan yang ramah</li>
+                    </ul>
+                    <a href="#service" class="btn btn-gold btn-lg">Pelajari Layanan Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        </div>
+    <!-- ===== Services ===== -->
+    <section id="service" class="service section-pad section-cream">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-eyebrow">Our Services</span>
+                <h2 class="section-title">Layanan &amp; Fasilitas <span class="text-gradient">Unggulan</span></h2>
+                <p class="section-sub">Semua yang Anda butuhkan untuk hunian yang nyaman, aman, dan berkah.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon"><i class="fa-solid fa-broom"></i></div>
+                        <h5>Cleaning Service</h5>
+                        <p>Pembersihan kamar satu kali per minggu, serta hall, garasi, dan dapur dibersihkan setiap
+                            hari.</p>
                     </div>
                 </div>
 
-                
-                <!-- card 4 -->
-                <div class="col-md-4 h-100 col-6 col-md-4 col-lg-3">
-                    <div class="card h-100 text-center shadow-lg border-0">
-                        <div class="card-body">
-                            <i class="fa-solid fa-camera fs-1 text-warning mb-3"></i>
-                            <h5 class="card-title">Security</h5>
-                            <p class="card-text">
-                                In each floor there are several CCTVs running for 24 hours to be safe
-                                from theft and other things
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon"><i class="fa-solid fa-mug-saucer"></i></div>
+                        <h5>Refill Drinks</h5>
+                        <p>Kopi, teh, gula, dan minyak goreng diisi ulang secara rutin setiap satu bulan sekali.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon"><i class="fa-solid fa-mosque"></i></div>
+                        <h5>Adzan Reminders</h5>
+                        <p>Pengingat adzan di setiap lantai pada setiap 5 waktu sholat, menjaga ibadah tetap tepat
+                            waktu.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon"><i class="fa-solid fa-camera"></i></div>
+                        <h5>Security 24/7</h5>
+                        <p>CCTV aktif 24 jam di setiap lantai untuk keamanan dari pencurian dan hal-hal yang tidak
+                            diinginkan.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon"><i class="fa-solid fa-wifi"></i></div>
+                        <h5>WiFi up to 400 Mbps</h5>
+                        <p>Internet ultra cepat untuk streaming, belajar, meeting, dan gaming — stabil dan rutin
+                            dirawat.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon"><i class="fa-solid fa-key"></i></div>
+                        <h5>RFID Smart Key</h5>
+                        <p>Akses pintu otomatis dengan RFID Smart Key — keamanan yang praktis, modern, dan aman.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Rooms ===== -->
+    <section id="rooms" class="rooms section-pad">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-eyebrow">Room Details</span>
+                <h2 class="section-title">Kamar yang <span class="text-gradient">Lengkap</span></h2>
+            </div>
+
+            <div class="room-feature">
+                <div class="row g-0 align-items-stretch">
+                    <div class="col-lg-6">
+                        <div class="room-img" style="background-image: url('img/room1.jpg');" role="img"
+                            aria-label="Kamar Grand Kedawung"></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="room-body">
+                            <h3>Fasilitas di Setiap Kamar</h3>
+                            <p class="text-muted mb-4">Setiap kamar sudah dilengkapi dengan fasilitas eksekutif berikut:
                             </p>
-                                
+                            <div class="row g-3 mb-4">
+                                <div class="col-6"><span class="room-amenity"><i class="fa-solid fa-snowflake"></i>AC</span></div>
+                                <div class="col-6"><span class="room-amenity"><i class="fa-solid fa-door-closed"></i>Lemari</span></div>
+                                <div class="col-6"><span class="room-amenity"><i class="fa-solid fa-shower"></i>Kamar Mandi Dalam</span></div>
+                                <div class="col-6"><span class="room-amenity"><i class="fa-solid fa-temperature-arrow-up"></i>Water Heater</span></div>
+                                <div class="col-6"><span class="room-amenity"><i class="fa-solid fa-chair"></i>Meja &amp; Kursi</span></div>
+                                <div class="col-6"><span class="room-amenity"><i class="fa-solid fa-book"></i>Rak Buku &amp; Sepatu</span></div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex gap-3 align-item-center justify-content-center ">
-                        <!-- card 5 -->
-                    <div class="col-md-4 col-6 col-md-4 col-lg-4">
-                        <div class="card h-100 text-center shadow-lg border-0">
-                            <div class="card-body">
-                                <i class="fa-solid fa-wifi fs-1 text-warning mb-3"></i>
-                                <h5 class="card-title">WiFi up to 400 Mbps </h5>
-                                <p class="card-text">
-                                    Enjoy ultra-fast 400 Mbps Wi-Fi for 
-                                    streaming, studying, meetings, and 
-                                    gaming—stable and regularly maintained 
-                                    for top performance.
-                                </p>
-    
+                            <div class="d-flex flex-wrap gap-3">
+                                <button id="seeMoreBtn" class="btn btn-gold btn-lg">Lihat Detail Lengkap</button>
+                                <a href="https://forms.gle/UHqE91cnF26jGbUX6" target="_blank"
+                                    class="btn btn-outline-dark-soft btn-lg">Terms &amp; Registration</a>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- card 7 harusnya -->
-                    <div class="col-md-4 col-6 col-md-4 col-lg-4 h-100 ">
-                        <div class="card h-100 shadow-lg text-center border-0">
-                            <div class="card-body">
-                                <i class="fa-solid fa-key fs-1 text-warning mb-3"></i>
-                                <h5 class="card-title">Smart Entering Key</h5>
-                                <p class="card-text">
-                                    Penghuni kos Grand Kedawung menggunakan 
-                                    RFID Smart Key untuk akses pintu otomatis, 
-                                    menjadikan keamanan lebih praktis, modern, dan aman.
-                                </p>
-    
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    
-
-            </div>
-
-        </div>
-
-        <!-- card 6 Room -->
-
-        <div class="d-flex justify-content-center mt-5 w-full">
-            <div class="card h-100 text-center shadow-lg border-0">
-                <div class="card-body">
-
-                    <h5 class="card-title">Room details</h5>
-                    <p class="card-text">Di setiap kamar sudah tersedia fasilitas....</p>
-
-
-                    <div class="container">
-                        <button id="seeMoreBtn" class="see-more-btn btn btn-warning btn-lg rounded-pill ">See
-                            More</button>
-                    </div>
-
-                    <!-- Overlay -->
-                    <div id="overlay" class="overlay">
-                        <!-- Popup Card -->
-                        <div class="popup-card">
-                            <span id="closeBtn" class="close-btn">&times;</span>
-                            <div class="popup-content">
-                                <div class="row">
-                                    <div class="col image-col">
-                                        <img src="img/room1.jpg" alt="Room Image">
-                                    </div>
-                                    <div class="col detail-col text-start">
-                                        <h2>Details</h2>
-                                        <p>
-                                            Di setiap kamar sudah tersedia fasilitas sebagai berikut:
-                                        <ul>
-                                            <li>AC</li>
-                                            <li>Lemari</li>
-                                            <li>Kamar Mandi
-                                                <ul>
-                                                    <li>Shower</li>
-                                                    <li>Closet Duduk</li>
-                                                    <li>Sabun & Shampo</li>
-                                                    <li>Water Heater</li>
-                                                </ul>
-                                            </li>
-                                            <li>Meja & Kursi</li>
-                                            <li>Rak Buku & Rak sepatu</li>
-                                            <li>Jam Dinding</li>
-                                            <li>Tempat Sampah</li>
-                                        </ul>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="container text-center mt-5 ">
-            <a href="https://forms.gle/UHqE91cnF26jGbUX6 " target="_blank" id="detail-btn"
-                class="detail-btn btn btn-warning btn-lg rounded-pill ">Terms & Registration</a>
-        </div>
-
-
-    </section>
-
-    <!-- Contact Us -->
-
-    <section id="contact" class=" contact py-5 section-bg-dark">
-        <div class="container">
-            <h2 class="section-title text-center mb-4 pt-2">Contact Us</h2>
-            <p class="text-center mb-5">Jika ada pertanyaan atau ingin menghubungi kami, silakan hubungi kami melalui
-                kontak di bawah ini.</p>
-
-            <div class="row g-4">
-                <!-- Contact Info Cards -->
-                <div class="col-lg-4 col-md-4 col-lg-3 h-100">
-                    <div class="card h-100 text-center  shadow-lg border-0">
-                        <div class="card-body">
-                            <i class="fa-solid fa-location-dot fs-1 text-warning mb-3"></i>
-                            <h5 class="card-title">Address</h5>
-                            <p class="card-text">Grand Kedawung Syariah Executive Kost, Ruko GL Square, Jl. 
-                            Kedawung Blok AA, RT.1/RW.3, Purwantoro, Kec. Blimbing, 
-                            Kota Malang, Jawa Timur 65142</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-6 col-md-4 col-lg-3 h-100">
-                    <div class="card h-100 text-center shadow-lg border-0">
-                        <div class="card-body">
-                            <i class="fa-solid fa-phone fs-1 text-warning mb-3"></i>
-                            <h5 class="card-title">Phone</h5>
-                            <p class="card-text">0851-1742-6680</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-6 col-md-4 col-lg-3 h-100">
-                    <div class="card h-100 text-center shadow-lg border-0">
-                        <div class="card-body">
-                            <i class="fa-solid fa-envelope fs-1 text-warning mb-3"></i>
-                            <h5 class="card-title">Email</h5>
-                            <p class="card-text">gkedawungkost@gmail.com</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Contact Form Card -->
-            <div class="row mt-3 mb-5">
-                <div class="col-12">
-                    <div class="card shadow-lg border-0">
-                        <div class="card-body">
-                            <h4 class="card-title text-center mb-4">Send us a Message</h4>
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email"
-                                            placeholder="Enter your email">
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">Message</label>
-                                    <textarea class="form-control" id="message" rows="5"
-                                        placeholder="Enter your message"></textarea>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" id="btn-send" class="btn btn-warning btn-lg rounded-pill">Send
-                                        Message</button>
-                                </div>
-                            </form>
+            <!-- Overlay / Popup -->
+            <div id="overlay" class="overlay">
+                <div class="popup-card">
+                    <span id="closeBtn" class="close-btn" role="button" aria-label="Tutup">&times;</span>
+                    <div class="popup-content">
+                        <div class="image-col">
+                            <img src="img/room1.jpg" alt="Kamar Grand Kedawung">
+                        </div>
+                        <div class="detail-col">
+                            <h4>Detail Fasilitas Kamar</h4>
+                            <p class="mb-2">Di setiap kamar sudah tersedia fasilitas sebagai berikut:</p>
+                            <ul>
+                                <li>AC</li>
+                                <li>Lemari</li>
+                                <li>Kamar Mandi
+                                    <ul>
+                                        <li>Shower</li>
+                                        <li>Closet Duduk</li>
+                                        <li>Sabun &amp; Shampo</li>
+                                        <li>Water Heater</li>
+                                    </ul>
+                                </li>
+                                <li>Meja &amp; Kursi</li>
+                                <li>Rak Buku &amp; Rak Sepatu</li>
+                                <li>Jam Dinding</li>
+                                <li>Tempat Sampah</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -368,101 +300,213 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
+    <!-- ===== Gallery ===== -->
+    <section id="gallery" class="gallery section-pad section-cream">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-eyebrow">Gallery</span>
+                <h2 class="section-title">Lihat Lebih <span class="text-gradient">Dekat</span></h2>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-item"><img src="img/room2.jpg" alt="Kamar tidur">
+                        <figcaption>Kamar</figcaption>
+                    </figure>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-item"><img src="img/kitchen1.jpg" alt="Dapur bersama">
+                        <figcaption>Dapur</figcaption>
+                    </figure>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-item"><img src="img/hall1.jpg" alt="Hall">
+                        <figcaption>Hall</figcaption>
+                    </figure>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-item"><img src="img/wc1.jpg" alt="Kamar mandi">
+                        <figcaption>Kamar Mandi</figcaption>
+                    </figure>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-item"><img src="img/door1.jpg" alt="Pintu kamar dengan smart key">
+                        <figcaption>Smart Door</figcaption>
+                    </figure>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-item"><img src="img/view2.jpg" alt="Tampak gedung">
+                        <figcaption>Area Kost</figcaption>
+                    </figure>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-item"><img src="img/view4.jpg" alt="Tampak gedung">
+                        <figcaption>Area Kost</figcaption>
+                    </figure>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <figure class="gallery-item"><img src="img/view1.jpg" alt="Tampak gedung">
+                        <figcaption>Eksterior</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA Banner ===== -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-inner text-center">
+                <h2>Siap Menjadi Bagian dari <span>Grand Kedawung</span>?</h2>
+                <p>Amankan kamar Anda sekarang — hunian nyaman, berkah, dan strategis menanti.</p>
+                <a href="https://forms.gle/UHqE91cnF26jGbUX6" target="_blank" class="btn btn-gold btn-lg">Terms &amp;
+                    Registration</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="contact section-pad">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-eyebrow">Contact Us</span>
+                <h2 class="section-title">Hubungi <span class="text-gradient">Kami</span></h2>
+                <p class="section-sub">Jika ada pertanyaan atau ingin menghubungi kami, silakan melalui kontak di bawah
+                    ini.</p>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <div class="contact-card h-100">
+                        <div class="service-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <h5>Address</h5>
+                        <p>Ruko GL Square, Jl. Kedawung Blok AA, RT.1/RW.3, Purwantoro, Kec. Blimbing, Kota Malang,
+                            Jawa Timur 65142</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-card h-100">
+                        <div class="service-icon"><i class="fa-solid fa-phone"></i></div>
+                        <h5>Phone / WhatsApp</h5>
+                        <p><a href="https://wa.me/6285117426680" target="_blank">0851-1742-6680</a></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-card h-100">
+                        <div class="service-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <h5>Email</h5>
+                        <p><a href="mailto:gkedawungkost@gmail.com">gkedawungkost@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="form-card">
+                        <h4 class="text-center mb-4">Send us a Message</h4>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5"
+                                    placeholder="Enter your message"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" id="btn-send" class="btn btn-gold btn-lg px-5">Send
+                                    Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
         <div class="container">
             <div class="row g-4">
-                <!-- Company Info -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="img/logo.png" alt="Logo" width="40" height="32" class="me-2">
-                        <h5 class="mb-0 text-warning">Grand Kedawung</h5>
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="img/logo.png" alt="Logo" width="42" height="34">
+                        <h5 class="mb-0">Grand Kedawung</h5>
                     </div>
-                    <p class="text-light">Syariah Executive Kost yang menerapkan konsep sesuai dengan syariah Islam
-                        untuk keberkahan dan keselamatan dunia akhirat bagi semua pihak.</p>
-                    <div class="d-flex gap-3">
-                        <a href="https://www.instagram.com/grandkedawung/" target="_blank" class="text-warning fs-4"><i
+                    <p>Syariah Executive Kost yang menerapkan konsep sesuai syariah Islam untuk keberkahan dan
+                        keselamatan dunia akhirat bagi semua pihak.</p>
+                    <div class="d-flex gap-2 social-links">
+                        <a href="https://www.instagram.com/grandkedawung/" target="_blank" aria-label="Instagram"><i
                                 class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/6285117426680" target="_blank" class="text-warning fs-4"><i
+                        <a href="https://wa.me/6285117426680" target="_blank" aria-label="WhatsApp"><i
                                 class="fab fa-whatsapp"></i></a>
-                        <a href="#" target="_blank" class="text-warning fs-4"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.tiktok.com/@grand.kedawung?is_from_webapp=1&sender_device=pc"
-                            target="_blank" class="text-warning fs-4"><i class="fab fa-tiktok"></i></a>
+                            target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
 
-                <!-- Quick Links -->
                 <div class="col-lg-2 col-md-6">
-                    <h5 class="text-warning mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#hero" class="text-light text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="#about" class="text-light text-decoration-none">About Us</a></li>
-                        <li class="mb-2"><a href="#service" class="text-light text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#service">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
-                <!-- Services -->
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="text-warning mb-3">Our Services</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Cleaning Service</li>
-                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Refill Drinks</li>
-                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Adzan Reminders</li>
-                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>Security 24/7</li>
-                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>RFID Key</li>
-                        <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>. More</li>
+                    <h6>Our Services</h6>
+                    <ul class="list-unstyled footer-list">
+                        <li><i class="fa-solid fa-check"></i>Cleaning Service</li>
+                        <li><i class="fa-solid fa-check"></i>Refill Drinks</li>
+                        <li><i class="fa-solid fa-check"></i>Adzan Reminders</li>
+                        <li><i class="fa-solid fa-check"></i>Security 24/7</li>
+                        <li><i class="fa-solid fa-check"></i>WiFi 400 Mbps</li>
+                        <li><i class="fa-solid fa-check"></i>RFID Smart Key</li>
                     </ul>
                 </div>
 
-                <!-- Contact Info -->
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="text-warning mb-3">Contact Info</h5>
-                    <div class="d-flex align-items-start mb-2">
-                        <i class="fa-solid fa-location-dot text-warning me-2 mt-1"></i>
-                        <span class="text-light">Grand Kedawung Syariah Executive Kost, Ruko GL Square, Jl. 
-                            Kedawung Blok AA, RT.1/RW.3, Purwantoro, Kec. Blimbing, 
-                            Kota Malang, Jawa Timur 65142
-                        </span>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                        <i class="fa-solid fa-phone text-warning me-2"></i>
-                        <span class="text-light">0851-1742-6680</span>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                        <i class="fa-solid fa-envelope text-warning me-2"></i>
-                        <span class="text-light"> gkedawungkost@gmail.com</span>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="fa-solid fa-clock text-warning me-2"></i>
-                        <span class="text-light">24/7 Available</span>
-                    </div>
+                    <h6>Contact Info</h6>
+                    <ul class="list-unstyled footer-list">
+                        <li><i class="fa-solid fa-location-dot"></i>Ruko GL Square, Jl. Kedawung Blok AA, Purwantoro,
+                            Blimbing, Kota Malang 65142</li>
+                        <li><i class="fa-solid fa-phone"></i>0851-1742-6680</li>
+                        <li><i class="fa-solid fa-envelope"></i>gkedawungkost@gmail.com</li>
+                        <li><i class="fa-solid fa-clock"></i>24/7 Available</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Footer Bottom -->
-            <hr class="my-4 border-secondary">
-            <div class="row align-items-center">
+            <hr>
+            <div class="row align-items-center footer-bottom">
                 <div class="col-md-6">
-                    <p class="mb-0 text-light">&copy; 2025 Grand Kedawung. All rights reserved.</p>
+                    <p class="mb-0">&copy; 2025 Grand Kedawung. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="#" target="_blank" class="text-light text-decoration-none me-3">Privacy Policy</a>
-                    <a href="#" target="_blank" class="text-light text-decoration-none">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <button id="scrollTopBtn" class="btn btn-warning rounded-circle shadow"
-        style="position: fixed; bottom: 20px; right: 20px; display: none;">
+    <button id="scrollTopBtn" aria-label="Kembali ke atas">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
