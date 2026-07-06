@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================
+   Grand Kedawung — custom layer on top of Tailwind
+   Build: npm run build:css
+===================================================== */
+
+@layer base {
+  html {
+    scroll-padding-top: 96px;
+  }
+
+  body {
+    @apply bg-ivory font-body text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-gold text-ivory;
+  }
+}
+
+@layer components {
+
+  /* --- Buttons --- */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-bold tracking-wide text-ink shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-deep hover:text-ivory;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/20 px-8 py-3.5 text-sm font-semibold tracking-wide text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:bg-gold-tint;
+  }
+
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ivory/30 px-8 py-3.5 text-sm font-semibold tracking-wide text-ivory transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:text-gold;
+  }
+
+  /* --- Section headings --- */
+  .eyebrow {
+    @apply mb-4 inline-flex items-center gap-3 text-[0.7rem] font-bold uppercase tracking-widest2 text-gold-deep;
+  }
+
+  .eyebrow::before,
+  .eyebrow::after {
+    content: "";
+    @apply h-px w-8 bg-gold/50;
+  }
+
+  .eyebrow-left::before {
+    content: none;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-[2.75rem];
+  }
+
+  /* --- Ornament divider --- */
+  .ornament {
+    @apply flex items-center justify-center gap-4 text-gold;
+  }
+
+  .ornament::before,
+  .ornament::after {
+    content: "";
+    @apply h-px w-20 bg-gradient-to-r from-transparent via-gold/60 to-transparent;
+  }
+
+  /* --- Icon tile --- */
+  .icon-tile {
+    @apply grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-gold/30 bg-gold-tint text-xl text-gold-deep transition-transform duration-300;
+  }
+
+  /* --- Nav link --- */
+  .nav-link {
+    @apply relative py-2 text-sm font-semibold text-ink/80 transition-colors duration-300 hover:text-gold-deep;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute inset-x-0 -bottom-0.5 mx-auto h-px w-0 bg-gold transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* --- Form fields --- */
+  .field {
+    @apply w-full rounded-xl border border-ink/15 bg-ivory px-4 py-3 text-sm text-ink placeholder:text-smoke/60 transition-all duration-300 focus:border-gold focus:outline-none focus:ring-4 focus:ring-gold/15;
+  }
+}
+
+@layer utilities {
+
+  /* --- Backgrounds --- */
+  .bg-hero-glow {
+    background:
+      radial-gradient(55% 70% at 88% 8%, rgba(243, 212, 137, 0.5) 0%, transparent 60%),
+      radial-gradient(40% 55% at 2% 95%, rgba(226, 160, 32, 0.14) 0%, transparent 60%),
+      theme("colors.cream");
+  }
+
+  .bg-pattern-night {
+    background-color: theme("colors.night");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='76' height='76' viewBox='0 0 76 76'%3E%3Cg fill='none' stroke='%23e2a020' stroke-opacity='0.13'%3E%3Cpath d='M38 8l8.2 21.8L68 38l-21.8 8.2L38 68l-8.2-21.8L8 38l21.8-8.2z'/%3E%3Ccircle cx='38' cy='38' r='9'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(115deg, theme("colors.gold.dark"), theme("colors.gold.DEFAULT") 55%, theme("colors.gold.light"));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+/* =====================================================
+   Scroll reveal (only when JS is available)
+===================================================== */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* =====================================================
+   Room details popup
+===================================================== */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(22, 18, 9, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.overlay.active {
+  display: flex;
+  animation: overlayIn 0.25s ease-out;
+}
+
+.overlay.active .popup-card {
+  animation: popupIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.overlay-active {
+  overflow: hidden;
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =====================================================
+   Floating hero card
+===================================================== */
+@keyframes floatY {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: floatY 4.5s ease-in-out infinite;
+}
+
+/* =====================================================
+   Accessibility & print
+===================================================== */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  html.js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media print {
+
+  #mainNav,
+  #scrollTopBtn,
+  .overlay {
+    display: none !important;
+  }
+}
