@@ -10,9 +10,7 @@ const scrollTopBtn = document.getElementById("scrollTopBtn");
 function onScroll() {
   const scrolled = window.scrollY || document.documentElement.scrollTop;
 
-  mainNav.classList.toggle("bg-ivory/90", scrolled > 40);
-  mainNav.classList.toggle("backdrop-blur-md", scrolled > 40);
-  mainNav.classList.toggle("shadow-soft", scrolled > 40);
+  mainNav.classList.toggle("nav-solid", scrolled > 40);
   navInner.classList.toggle("py-3", scrolled > 40);
   navInner.classList.toggle("py-5", scrolled <= 40);
 
@@ -36,6 +34,12 @@ function setMenu(open) {
   menuBtn.setAttribute("aria-expanded", String(open));
   menuIcon.classList.toggle("fa-bars", !open);
   menuIcon.classList.toggle("fa-xmark", open);
+  // Menu panel is light — force the solid nav look while it is open
+  if (open) {
+    mainNav.classList.add("nav-solid");
+  } else {
+    onScroll();
+  }
 }
 
 menuBtn.addEventListener("click", () => {
@@ -112,7 +116,54 @@ overlay.addEventListener("click", (e) => {
   if (e.target === overlay) closePopup();
 });
 
+// --- Gallery lightbox ---
+const lightbox = document.getElementById("lightbox");
+const lbImg = document.getElementById("lbImg");
+const lbCaption = document.getElementById("lbCaption");
+const galleryItems = Array.from(document.querySelectorAll("[data-gallery]"));
+let currentImage = 0;
+
+function showImage(index) {
+  currentImage = (index + galleryItems.length) % galleryItems.length;
+  const item = galleryItems[currentImage];
+  const img = item.querySelector("img");
+
+  lbImg.src = img.src;
+  lbImg.alt = img.alt;
+  lbCaption.textContent = item.dataset.caption || "";
+}
+
+function openLightbox(index) {
+  showImage(index);
+  lightbox.classList.add("active");
+  document.body.classList.add("overlay-active");
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  document.body.classList.remove("overlay-active");
+}
+
+galleryItems.forEach((item, i) => {
+  item.addEventListener("click", () => openLightbox(i));
+});
+
+document.getElementById("lbClose").addEventListener("click", closeLightbox);
+document.getElementById("lbPrev").addEventListener("click", () => showImage(currentImage - 1));
+document.getElementById("lbNext").addEventListener("click", () => showImage(currentImage + 1));
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+// --- Shared keyboard shortcuts ---
 document.addEventListener("keydown", (e) => {
+  if (lightbox.classList.contains("active")) {
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") showImage(currentImage - 1);
+    if (e.key === "ArrowRight") showImage(currentImage + 1);
+    return;
+  }
   if (e.key === "Escape" && overlay.classList.contains("active")) closePopup();
 });
 

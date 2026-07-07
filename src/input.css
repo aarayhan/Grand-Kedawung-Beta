@@ -17,7 +17,26 @@
   }
 
   ::selection {
-    @apply bg-gold text-ivory;
+    @apply bg-gold text-night;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #161209;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #94620a;
+    border-radius: 8px;
+    border: 2px solid #161209;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e2a020;
   }
 }
 
@@ -25,7 +44,11 @@
 
   /* --- Buttons --- */
   .btn-gold {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-bold tracking-wide text-ink shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-deep hover:text-ivory;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-br from-gold-light via-gold to-gold-deep px-8 py-3.5 text-sm font-bold tracking-wide text-night shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-8px_rgba(226,160,32,0.65)];
+  }
+
+  .btn-night {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-night px-8 py-3.5 text-sm font-bold tracking-wide text-gold shadow-[0_12px_30px_-8px_rgba(22,18,9,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-night2;
   }
 
   .btn-ghost {
@@ -33,37 +56,76 @@
   }
 
   .btn-ghost-light {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ivory/30 px-8 py-3.5 text-sm font-semibold tracking-wide text-ivory transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:text-gold;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ivory/30 px-8 py-3.5 text-sm font-semibold tracking-wide text-ivory backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:text-gold;
+  }
+
+  .btn-ghost-night {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-night/30 px-8 py-3.5 text-sm font-semibold tracking-wide text-night transition-all duration-300 hover:-translate-y-0.5 hover:border-night hover:bg-night hover:text-gold;
+  }
+
+  /* Shine sweep */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -80%;
+    width: 45%;
+    background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.65s ease;
+  }
+
+  .btn-shine:hover::after {
+    left: 130%;
   }
 
   /* --- Section headings --- */
   .eyebrow {
-    @apply mb-4 inline-flex items-center gap-3 text-[0.7rem] font-bold uppercase tracking-widest2 text-gold-deep;
+    @apply mb-5 inline-flex items-center gap-3.5 text-[0.68rem] font-bold uppercase tracking-widest2 text-gold-deep;
   }
 
   .eyebrow::before,
   .eyebrow::after {
     content: "";
-    @apply h-px w-8 bg-gold/50;
+    @apply h-px w-10 bg-gold/60;
   }
 
   .eyebrow-left::before {
     content: none;
   }
 
+  .eyebrow-light {
+    @apply text-gold;
+  }
+
+  .eyebrow-light::before,
+  .eyebrow-light::after {
+    @apply bg-gold/40;
+  }
+
   .section-title {
-    @apply font-display text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-[2.75rem];
+    @apply font-display text-4xl font-semibold leading-[1.08] text-ink md:text-5xl lg:text-[3.4rem];
+  }
+
+  .section-title-light {
+    @apply text-ivory;
   }
 
   /* --- Ornament divider --- */
   .ornament {
-    @apply flex items-center justify-center gap-4 text-gold;
+    @apply flex items-center justify-center gap-5 text-gold;
   }
 
   .ornament::before,
   .ornament::after {
     content: "";
-    @apply h-px w-20 bg-gradient-to-r from-transparent via-gold/60 to-transparent;
+    @apply h-px w-24 bg-gradient-to-r from-transparent via-gold/60 to-transparent;
   }
 
   /* --- Icon tile --- */
@@ -71,39 +133,31 @@
     @apply grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-gold/30 bg-gold-tint text-xl text-gold-deep transition-transform duration-300;
   }
 
-  /* --- Nav link --- */
-  .nav-link {
-    @apply relative py-2 text-sm font-semibold text-ink/80 transition-colors duration-300 hover:text-gold-deep;
+  .icon-tile-gold {
+    @apply grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-deep text-xl text-night shadow-gold transition-transform duration-300;
   }
 
-  .nav-link::after {
-    content: "";
-    @apply absolute inset-x-0 -bottom-0.5 mx-auto h-px w-0 bg-gold transition-all duration-300;
-  }
-
-  .nav-link:hover::after {
-    @apply w-full;
+  /* --- Editorial drop cap --- */
+  .dropcap::first-letter {
+    @apply float-left mr-3 font-display text-[3.4rem] font-bold leading-[0.85] text-gold-deep;
   }
 
   /* --- Form fields --- */
   .field {
-    @apply w-full rounded-xl border border-ink/15 bg-ivory px-4 py-3 text-sm text-ink placeholder:text-smoke/60 transition-all duration-300 focus:border-gold focus:outline-none focus:ring-4 focus:ring-gold/15;
+    @apply w-full rounded-xl border border-ink/15 bg-ivory px-4 py-3.5 text-sm text-ink placeholder:text-smoke/50 transition-all duration-300 focus:border-gold focus:outline-none focus:ring-4 focus:ring-gold/15;
   }
 }
 
 @layer utilities {
 
   /* --- Backgrounds --- */
-  .bg-hero-glow {
-    background:
-      radial-gradient(55% 70% at 88% 8%, rgba(243, 212, 137, 0.5) 0%, transparent 60%),
-      radial-gradient(40% 55% at 2% 95%, rgba(226, 160, 32, 0.14) 0%, transparent 60%),
-      theme("colors.cream");
-  }
-
   .bg-pattern-night {
     background-color: theme("colors.night");
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='76' height='76' viewBox='0 0 76 76'%3E%3Cg fill='none' stroke='%23e2a020' stroke-opacity='0.13'%3E%3Cpath d='M38 8l8.2 21.8L68 38l-21.8 8.2L38 68l-8.2-21.8L8 38l21.8-8.2z'/%3E%3Ccircle cx='38' cy='38' r='9'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .bg-pattern-gold {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='76' height='76' viewBox='0 0 76 76'%3E%3Cg fill='none' stroke='%23161209' stroke-opacity='0.1'%3E%3Cpath d='M38 8l8.2 21.8L68 38l-21.8 8.2L38 68l-8.2-21.8L8 38l21.8-8.2z'/%3E%3Ccircle cx='38' cy='38' r='9'/%3E%3C/g%3E%3C/svg%3E");
   }
 
   .text-gold-gradient {
@@ -116,12 +170,85 @@
 }
 
 /* =====================================================
+   Navbar — transparent over the dark hero,
+   solid ivory glass once scrolled (.nav-solid)
+===================================================== */
+#mainNav .nav-link {
+  @apply relative py-2 text-sm font-semibold text-ivory/85 transition-colors duration-300 hover:text-gold;
+}
+
+#mainNav .nav-link::after {
+  content: "";
+  @apply absolute inset-x-0 -bottom-0.5 mx-auto h-px w-0 bg-gold transition-all duration-300;
+}
+
+#mainNav .nav-link:hover::after {
+  @apply w-full;
+}
+
+#mainNav .brand-text {
+  @apply font-display text-2xl font-bold tracking-wide text-ivory transition-colors duration-300;
+}
+
+#mainNav .brand-text em {
+  @apply not-italic text-gold;
+}
+
+#mainNav #menuBtn {
+  @apply grid h-11 w-11 place-items-center rounded-xl border border-ivory/25 bg-ivory/10 text-lg text-ivory backdrop-blur transition-colors duration-300 lg:hidden;
+}
+
+#mainNav.nav-solid {
+  @apply bg-ivory/90 shadow-soft backdrop-blur-md;
+}
+
+#mainNav.nav-solid .nav-link {
+  @apply text-ink/80 hover:text-gold-deep;
+}
+
+#mainNav.nav-solid .brand-text {
+  @apply text-ink;
+}
+
+#mainNav.nav-solid .brand-text em {
+  @apply text-gold-deep;
+}
+
+#mainNav.nav-solid #menuBtn {
+  @apply border-ink/15 bg-transparent text-ink;
+}
+
+/* =====================================================
+   Gold marquee band
+===================================================== */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =====================================================
    Scroll reveal (only when JS is available)
 ===================================================== */
 html.js [data-reveal] {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(32px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html.js [data-reveal].is-visible {
@@ -130,7 +257,7 @@ html.js [data-reveal].is-visible {
 }
 
 /* =====================================================
-   Room details popup
+   Overlays: room popup & gallery lightbox
 ===================================================== */
 .overlay {
   display: none;
@@ -140,7 +267,7 @@ html.js [data-reveal].is-visible {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: rgba(22, 18, 9, 0.78);
+  background: rgba(22, 18, 9, 0.8);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -150,7 +277,8 @@ html.js [data-reveal].is-visible {
   animation: overlayIn 0.25s ease-out;
 }
 
-.overlay.active .popup-card {
+.overlay.active .popup-card,
+.overlay.active .lightbox-stage {
   animation: popupIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -212,6 +340,10 @@ body.overlay-active {
     transition-duration: 0.01ms !important;
   }
 
+  .marquee-track {
+    animation: none;
+  }
+
   html {
     scroll-behavior: auto !important;
   }
@@ -226,7 +358,8 @@ body.overlay-active {
 
   #mainNav,
   #scrollTopBtn,
-  .overlay {
+  .overlay,
+  .marquee {
     display: none !important;
   }
 }

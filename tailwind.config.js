@@ -19,7 +19,7 @@ module.exports = {
         night2: "#221b0e",
       },
       fontFamily: {
-        display: ['"Playfair Display"', "Georgia", "serif"],
+        display: ['"Cormorant Garamond"', "Georgia", "serif"],
         body: ['"Plus Jakarta Sans"', '"Segoe UI"', "sans-serif"],
       },
       boxShadow: {
