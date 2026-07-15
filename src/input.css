@@ -9,6 +9,9 @@
 
 @layer base {
   html {
+    /* Opt out of Chrome/Samsung Internet forced dark mode — the page
+       mixes intentional light and dark sections and must not be inverted */
+    color-scheme: only light;
     scroll-padding-top: 96px;
   }
 
