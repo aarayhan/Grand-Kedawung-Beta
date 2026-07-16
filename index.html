@@ -526,15 +526,22 @@
                 <p class="mt-5 text-ivory/60">Tur lengkap &mdash; dari kamar, dapur bersama, hingga fasilitas umum.</p>
             </div>
 
-            <div class="mx-auto max-w-4xl" data-reveal>
-                <div class="relative overflow-hidden rounded-[1.75rem] border border-gold/25 bg-night2 p-2 shadow-lift">
-                    <video class="aspect-video w-full rounded-[1.25rem] bg-night object-contain" controls preload="metadata"
-                        playsinline poster="img/hall1.jpg">
-                        <source src="img/detail-kos.mp4" type="video/mp4">
-                        Maaf, browser Anda tidak mendukung pemutaran video.
-                    </video>
+            <div class="mx-auto max-w-md text-center" data-reveal>
+                <div class="relative mx-auto w-fit">
+                    <div class="absolute -inset-4 rounded-[2.75rem] bg-gradient-to-br from-gold/30 via-gold/10 to-transparent opacity-70 blur-2xl"></div>
+                    <div class="relative w-[280px] overflow-hidden rounded-[2.25rem] border border-gold/30 bg-night2 p-2 shadow-lift sm:w-[330px]">
+                        <video class="aspect-[9/16] w-full rounded-[1.75rem] bg-night object-cover" muted loop playsinline
+                            preload="metadata" poster="img/room2.jpg" data-autoplay-inview>
+                            <source src="img/detail-kos.mp4" type="video/mp4">
+                            Maaf, browser Anda tidak mendukung pemutaran video.
+                        </video>
+                        <button id="videoMute" type="button" aria-label="Aktifkan suara"
+                            class="absolute bottom-5 right-5 grid h-11 w-11 place-items-center rounded-full border border-ivory/25 bg-night/60 text-ivory backdrop-blur transition-colors hover:border-gold hover:text-gold">
+                            <i class="fa-solid fa-volume-xmark"></i>
+                        </button>
+                    </div>
                 </div>
-                <p class="mt-5 text-center text-xs font-semibold uppercase tracking-widest2 text-gold">
+                <p class="mt-7 text-xs font-semibold uppercase tracking-widest2 text-gold">
                     <i class="fa-solid fa-circle-play mr-2"></i>Grand Kedawung Syariah Executive Kost
                 </p>
             </div>

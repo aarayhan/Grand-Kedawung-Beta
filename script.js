@@ -188,6 +188,41 @@ if ("IntersectionObserver" in window) {
   revealEls.forEach((el) => el.classList.add("is-visible"));
 }
 
+// --- Video Tour: autoplay when in view, tap to unmute ---
+const tourVideo = document.querySelector("[data-autoplay-inview]");
+
+if (tourVideo) {
+  if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tourVideo.play().catch(() => {});
+          } else {
+            tourVideo.pause();
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    videoObserver.observe(tourVideo);
+  } else {
+    tourVideo.play().catch(() => {});
+  }
+
+  const muteBtn = document.getElementById("videoMute");
+  if (muteBtn) {
+    const muteIcon = muteBtn.querySelector("i");
+    muteBtn.addEventListener("click", () => {
+      tourVideo.muted = !tourVideo.muted;
+      muteBtn.setAttribute("aria-label", tourVideo.muted ? "Aktifkan suara" : "Matikan suara");
+      muteIcon.classList.toggle("fa-volume-xmark", tourVideo.muted);
+      muteIcon.classList.toggle("fa-volume-high", !tourVideo.muted);
+      if (!tourVideo.muted) tourVideo.play().catch(() => {});
+    });
+  }
+}
+
 // --- Contact form ---
 const contactForm = document.querySelector("#contact form");
 
